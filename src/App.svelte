@@ -20,6 +20,12 @@
     },
   ];
   let todo = "";
+
+  function handleAddCard() {
+    cards = [...cards, { todo, list: "task" }];
+    console.log(`${todo} successfully added.`);
+    todo = "";
+  }
 </script>
 
 <div class="container my-3">
@@ -47,7 +53,7 @@
             id="todo-input"
             bind:value={todo}
           />
-          <button class="btn btn-success">Add</button>
+          <button on:click={handleAddCard} class="btn btn-success">Add</button>
         </ul>
       </div>
     </div>
