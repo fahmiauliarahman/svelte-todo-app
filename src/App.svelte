@@ -19,6 +19,7 @@
       list: "task",
     },
   ];
+  let todo = "";
 </script>
 
 <div class="container my-3">
@@ -39,6 +40,14 @@
           {#each cards as card}
             <TodoCard content={card.todo} />
           {/each}
+          <input
+            type="text"
+            name="todo-input"
+            class="form-control mb-2"
+            id="todo-input"
+            bind:value={todo}
+          />
+          <button class="btn btn-success">Add</button>
         </ul>
       </div>
     </div>
