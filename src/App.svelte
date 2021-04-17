@@ -1,6 +1,5 @@
 <script>
   import TodoCard from "./TodoCard.svelte";
-  // let contents = ["Belajar CSS", "Belajar JS", "Belajar ES6", "Belajar Svelte"]; //array of strings
   let cards = [
     {
       todo: "Belajar CSS",
@@ -36,13 +35,6 @@
       <div class="card-header">Todo</div>
       <div class="card-body">
         <ul class="list-group">
-          <!-- For array of strings -->
-          <!-- {#each contents as content} -->
-          <!-- <TodoCard content={content} /> -->
-          <!-- <TodoCard {content} /> -->
-          <!-- {/each} -->
-
-          <!-- for array of objects -->
           {#each cards as card}
             <TodoCard content={card.todo} />
           {/each}
