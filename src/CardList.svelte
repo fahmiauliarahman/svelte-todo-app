@@ -1,9 +1,15 @@
 <script>
+  import { createEventDispatcher } from "svelte";
+
   import TodoCard from "./TodoCard.svelte";
   export let cards, listName;
+
   let todo = "";
+  const dispatch = createEventDispatcher();
+
   function handleAddCard() {
-    cards = [...cards, { todo, list: "task" }];
+    // cards = [...cards, { todo, list: "task" }];
+    dispatch("addCard", { todo, listName });
     console.log(`${todo} successfully added.`);
     todo = "";
   }
