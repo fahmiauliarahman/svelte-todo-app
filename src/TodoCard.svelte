@@ -1,5 +1,24 @@
 <script>
-  export let content;
+  export let content, listName;
 </script>
 
-<li class="list-group-item mb-2">{content}</li>
+<li class="list-group-item mb-2">
+  <div class="row">
+    {#if listName != "To Do"}
+      <div class="col-sm-1">
+        <i class="fas fa-caret-left text-primary" />
+      </div>
+    {/if}
+    <div class="col-sm-8">
+      {content}
+    </div>
+    <div class="col-sm-1">
+      <i class="fas fa-trash-alt text-danger" />
+    </div>
+    {#if listName != "Done"}
+      <div class="col-sm-1">
+        <i class="fas fa-caret-right text-primary" />
+      </div>
+    {/if}
+  </div>
+</li>

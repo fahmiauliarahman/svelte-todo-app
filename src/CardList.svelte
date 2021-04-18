@@ -20,7 +20,7 @@
   <div class="card-body">
     <ul class="list-group">
       {#each cards as card}
-        <TodoCard content={card.todo} />
+        <TodoCard content={card.todo} {listName} />
       {/each}
       <input
         type="text"
