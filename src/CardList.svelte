@@ -13,14 +13,24 @@
     console.log(`${todo} successfully added.`);
     todo = "";
   }
+
+  function handleDeleteCard(e) {
+    const data = e.detail;
+    dispatch("deleteCard", { index: data.index, listName });
+  }
 </script>
 
 <div class="card bg-light">
   <div class="card-header">{listName}</div>
   <div class="card-body">
     <ul class="list-group">
-      {#each cards as card}
-        <TodoCard content={card.todo} {listName} />
+      {#each cards as card, index}
+        <TodoCard
+          content={card.todo}
+          {listName}
+          {index}
+          on:deleteCard={handleDeleteCard}
+        />
       {/each}
       <input
         type="text"
